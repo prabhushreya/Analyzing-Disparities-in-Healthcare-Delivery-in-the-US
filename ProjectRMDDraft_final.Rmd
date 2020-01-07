@@ -1,0 +1,1124 @@
+---
+title: "Disparities in ESRD Treatment and Access to Care as Predicted by Factors Associated
+  with Socioeconomic Status"
+author: "Purva Singh, Shreya Prabhu, Meredith Meadows, Dong-Lien Lin"
+date: "2018/11/18"
+output: html_document
+---
+
+Project summary:
+
+Our project sought to explore the associations between well-known predictors of socioeconomic status (race/ethnicity, gender, geographic area) and incidents of end-stage renal disease (ESRD) that result in referrals for dialysis.  While kidney transplants are associated with significantly better health outcomes than dialysis as treatment for ESRD, fewer than 20% of patients waitlisted for kidney transplants have received organs in recent years.(i)  Numerous studies have documented the disparities in waitlisting and allocation of kidneys that exist between whites and other racial groups in the United States.(ii)  White Americans have been shown, for example, to receive kidney transplants at 1.5 times the rate of African-Americans despite the fact that African-Americans are diagnosed with ESRD at 3 times the rate of the white population. (i)  We started our analysis by confirming these findings about discriminatory practices in waitlisting.  Subsequent analyses focused on treatment disparities in care exclusively related to dialysis.  
+
+Part one of our project focused on 1) disparities in the amount of pre-dialysis nephrology care recei   ved by white versus racial minority patients and 2) differences in median age at the time of referral to dialysis between white and minority patients. Our primary data source for these comparisons was the United States Renal Data System (USRDS). 
+
+Part two explored associations between socioeconomic status (primarily income) and treatment disparties between races after the start of dialysis. We chose to focus on disparities associated with care-quality.  Rather than rely on the "star-ratings" given to facilities by the Centers for Medicare and Medicaid Services (CMS), we peformed substantive comparisons of facilities across 1) clinical indicators of successful dialysis treatment and 2) patient-generated satisfaction scores.  A literature review prior to the start of the project revealed that successful dialysis care is associated with facilities that have: higher rates of patients with long-term vascular access sites (versus long-term catheters), lower tranfusion rates, lower rates of hospitalizations, lower rates of hospital readmission, and lower mortality rates.(iii)  We used these factors as our own independent measures of care-quality.  Our primary data source for these comparisons were the the annual Dialysis Facility Reports (DFRs) maintained by the CMS.  The DFRs contain detailed data on of the clinical indicators of interest to us for the 7,281 dialysis facilities in the United States. 
+
+We found that our independent measures did coincide with the "stars" given to facilities by the CMS. Moreover, patient-satisfaction survey results coincided with our assessments of care-quality and with the CMS's ratings.  We then used  quality-of-care data with U.S. Census data to create a model of the relationship between quality-of-care and state income.  
+
+Hypotheses:
+
+We hypothesized that members of minority racial groups receive significantly less pre-dialysis nephrology care than white patients.  We also hypothesized that racial minorities are referred for dialysis at statistically-significant younger ages than white patients.  We posit that this may indicate systematic differences in treatment in which "better" options fail to be fully explored before minorty patients are referred to dialysis.
+
+We hypothesized further that treatment disparities persist for minority patients after they begin dialysis.  We suspected that the dialysis care received by minorites is significantly poorer than the care received by whites (measured both by clinical indicators and patient-satisfaction indicators).  Moreover, since racial minorites tend to live in economically and racially-segreated areas, we hypothesized that average state income could accurately be predicted using descriptive data for the dialysis facilites in each state (i.e. the number of facilities, the average size of faciliites, and the average care ratings).  
+
+Conclusions:
+
+Our analysis captured what appear to be systemic treatment dispartiies between white and minority patients diagnosed with ESRD.  The USRDS data distinguishes six racial categories: white, black, American Indian/Alaskan Native, Native Hawaiian/Pacific Islander and other/multiracial. Not only was each minority race referred to dialysis at statistically-significant younger ages than whites between 1996 to 2016, we found that African-Americans, in particular, have received significantly less pre-dialysis neprology care relative to whites in the same time period. 
+
+We were able to create a linear model that very modestly predicts the total number of dialysis "stations"" in a state based on state median income.  Facilities with fewer stations are associated with higher quality-of-care, which is associated with living in a state with a median income above the U.S. national average.  We found the lowest quality of dialysis care in the Southeast region of the country.  Importantly, this region is also home to a larger proportion of African-Americans than any other region in the country.(i) 
+
+Implications for Public Policy:
+
+Our findings indicate that racial minorities, especially African-Americans, are discriminated against in health care related to dialysis.  African-Americans are referred to dialysis at significantly lower median ages than whites, possibly indicating a failure of health care providers to explore options other than dialysis for them.  Once they begin dialysis, minorities then receive poorer care than whites.  
+
+There appears to be a need to establish better oversight over the equitable distribution over resources that constitute "pre-nephrology care."  If minorities received adequate preventative nephrology care, fewer might develop ESRD, which would lead to a decrease in the disproportionate number of racial minorities among dialysis patients. 
+
+
+Citations:
+
+i.  Centers for Disease Control. Accessed November 2018. www.CDC.gov.
+ii. Saunders, Lee, et al. "Racial Disparities in Reaching Renal Transplant Waitlist: Is Geography as Important as Race?"  Clinical Tranplant, 2015, 29(6).  Accessed November 2018.  www.ncbi.nlm.nih.gov.  
+iii.  BC Renal Agency.  Accessed December 2018.  www.bcrenalagency.ca.
+
+
+Detailed summaries of statitistical analyses:
+
+1) Prevalence of ESRD within racial groups.  Pacific Islanders and African-Americans have the highest incidence of ERSD within their respective populations. 
+-see plot in chunk #1  
+
+2) Public insurance (Medicare and Medicaid) usage differs between races.  This plot of insurance coverage in 2016 shows disparites in the rates and kinds of coverage between African-Americans and whites.  African-Americans, for example, are much more reliant on Medicaid than whites.
+-see plot in chunk #4
+
+3) White patients are waitlisted for kidney trantsplants at signifcantly higher rates than African-Americans.  
+- see t-test code in chunk #5
+
+4) Despite lower overall incidence of ESRD among whites compared to African-Americans, whites are waitlisted for kidney transplants at higher rates than African-Americans  The plot shows that 5,000 African-American patients vs. 125,000 white patients were waitlisted in 2015.  
+- see plot in chunk #6
+
+5) Overall, the percentage of both African-American and white patients who are waitlisted for kidney transplants has been declining since 2011.
+- see plot in chunk #7
+
+6) For patients who receive kidney transplants, wait time are shown to be statistically-significanttly longer for African-Americans than whites.  In 2008, for example, African-American had waited an average of 1600 days before receiving organs.  Whites had waited an average of 1000 days. 
+- see plot in chunk #8
+
+7) Compared to whites, African-Americans are more likely to have received 0 - 6 months of pre-dialysis nephrology care and less likely to have received 12 or more months of pre-dialysis nephrology care 
+- see plots in chunk #9
+
+8) Racial minorities are referred to dialysis at statistically-significant younger ages than whites.  The largest differences exist between a) whites and African-Americans (who are on average 7.3 years younger than whites at the start of dialysis) and b) whites and American Indians/Alaskan Natives (who are on average 8.3  years younger than whites at the start of dialysis).
+
+9) 90.81% of the variability in median age at the time of referral for dialyis is accounted for by race.
+- see linear regression code and interpretation in chunk #10
+
+10) Although we conducted t-tests to compare each racial group to every other on the variable of median age at dialysis referral, we didn't include the results of those tests based on the residual analysis from our linear model.  The assumption of a linear relationship between median age at time of referral to dialysis and race as a factor does hold.  This enabled us to interpet the point estimates (beta values and multiple R-squared values).  The assumption of constant variance did not hold, which prevented us from using the model to make statistical inferences, including t-tests. 
+- see residual and qqnorm plots in chunk #11
+
+11)  There are statistically-significant differences between for-profit and not-for profit dialysis facilities with regard to the following non-clinical indicators 1) the number of facilities with five-star care ratings and 2) the number of stations in each facility.
+
+There are statistically-significant differences between for-profit and not-for profit dialysis facilities with regard to the following clinical indicators 1) mortality rates 2) readmission rates 3) transfusion rates 4) number of patients and patient-months with long-term catheters and) standard infection ratios.  
+
+There is no statistical significance between for-profit and not-for-profit facilities with regard to number of stations.
+- see t-test code in chunks #14-15
+
+12)  There are statistically-significant differences between facilites with three or fewer stars and those with more than three stars on the following indicators: 1) number of stations inside the facility 2) mortality rates 3) readmission rates 4) transfusion rates 5) rates of fistula use 6) and number of patients/patients-months with long-term catheter use.  Facilities with three stars of fewer showed higher incidence of all these factors that are associated with poor care-quality. This analysis was the beginning of our analysis of whether the "Five.Star" variable can be used as a bona fide indicator of care-quality. 
+- see t-test code in chunk #16
+
+13) We wanted to test the "Five.Star" variable further by subsetting facilities into two groups: those given two or fewer stars by CMS and those given more than 2 stars.  T-tests confirm that above-par facilities have statistically-significant lower rates of patients and patients-months with long-term catheters.
+- see t-test code in chunk #17
+
+14) Seeing that the Five.Star variable might be a true indicator of care-quality, we attempted to find traits that predictably increase or lower a facility's star rating. All t-test results indicate that Five.Star is able to serve as a bona fide index to care quality. Data shows that facilities with traits associated with low care-quality (such as many patients using long-term catheters, higher readmission rates, etc.) have statistically-significantly lower star ratings.
+- see t-test code in chunk #18 
+
+15) We used k-means clustering to evaluate if there is a relationship between the Five.Star variable and any other colunns in the Dialysis Facility Report data set.  The graphs and tables indicate that the average accuracy of the clustering is only around 20%, the same accuracy we could achieve by randomly assigning facilities into five groups. We concluded that nothing in the data is predictive to our assumed quality index "Five.Star."
+- see code in chunks #19-20
+
+16) Using more clustering analysis, we concluded that the individual owner of a facility (i.e. DaVita) is a more accurate predictor of the quality-of-care provided at the facility than either the facility's profit status or the facility's network location. 
+- see code in chunks #21-25
+
+17) Faciliites with higher star-ratings (shown in previous analyses to be a bona fide predictor of care-quality) also tend to have higher patient-generated ratings.  Facilities in cluster 3, as expected, had statistically-significantly lower patient-generated scores.  We confirm the overlap of the relationship between 1) our independent measures of care-quality based on clinical indicators 2) the five-star ratings given by the CMS and 3) facility ratings by patients.  
+- see t-test code in chunk #26 
+
+18)  Based on the star-ratings, the Southeast region of the United States has the overall worst quality-of-care rates in the country.  
+- see maps in chunk #27
+
+19) Cluster plots 
+- see chunk #28
+
+20)  A state's median annual income is modestly predictive of the total quantity of dialysis stations in the state.  Each increase of $10,000 in median annual state income is associated with an average decrease of .19 in the log number of dialysis stations inside the state. 2.2% of the variability in log number of dialysis stations in a state is accounted for by median annual state income.  
+- see linear regression code and interpretation in chunks #32-34
+
+
+Required packages and libraries:
+```{r}  
+if (!require("varhandle")){
+  install.packages("varhandle")
+  library (varhandle)
+} 
+if (!require("tidyverse")){
+  install.packages("tidyverse")
+  library (tidyverse)
+} 
+if (!require("dplyr")){
+  install.packages("dplyr")
+  library (dplyr)
+}
+if (!require("dplyr")){
+  install.packages("tidyr")
+  library(tidyr)
+}
+if (!require("reshape2")){
+  install.packages("reshape2")
+  library (reshape2)
+}
+if (!require("factoextra")){
+  install.packages("factoextra")
+  library (factoextra)
+}
+if (!require("FactoMineR")){
+  install.packages("FactoMineR")
+  library (FactoMineR)
+}
+if (!require("cluster")){
+  install.packages("cluster")
+  library (cluster)
+}
+if (!require("ggplot2")){
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+if (!require("usmap")){
+  install.packages("usmap")
+  library (usmap)
+}
+if (!require("readxl")){
+  install.packages("readxl")
+  library(readxl)
+}
+if (!require("data.table")){
+  install.packages("data.table")
+  library(data.table)
+}
+if (!require("gdata")){
+  install.packages("gdata")
+  library(gdata)
+}
+if (!require("scales")){
+  install.packages("scales")
+  library(scales)
+}
+
+```
+
+Plotting incidence of ESRD within racial populations.  
+```{r}
+#code chunk 1
+
+prevalence_data <- read.csv("Data/prevalence_table.csv")
+prevalence_data
+
+colnames(prevalence_data) <- c("Prevalence", "Population", "Percentage_Within_Race", "Year", "Race")
+
+
+prevalence_data[,1] <- unfactor(prevalence_data[,1])
+prevalence_data[,1] <- as.numeric(gsub(",","",prevalence_data[,1]))
+
+
+prevalence_data[,2] <- unfactor(prevalence_data[,2])
+prevalence_data[,2] <- as.numeric(gsub(",","",prevalence_data[,2]))
+
+ggplot(prevalence_data, (aes(x= Year, y=Percentage_Within_Race , col= Race)))+
+  geom_point(alpha= 0.3)+
+  geom_smooth(method= "auto")+
+  labs(title = "Prevalence of ESRD Within Racial Groups", y = "Percentage of Racial Population With Diagnosis", x   = "Years: 1996 - 2016")+
+  theme(axis.title = element_text(size = 12))+
+  theme(plot.title = (element_text(size = 12)))
+
+```
+Subsetting insurance data
+```{r}
+#code chunk 2
+
+
+insurance <- read.csv("Data/insurance.csv")
+
+t_insurance <- t(insurance)  
+
+colnames(t_insurance) <- rownames(insurance)  
+rownames(t_insurance) <- colnames(insurance)
+
+race_insurance <- t_insurance[,33:38] 
+
+race_insurance<- as.data.frame(race_insurance[,]) %>% 
+                  select(-7)
+race_insurance<- race_insurance[2:nrow(race_insurance),]
+
+race_insurance[1:6]<-unfactor(race_insurance[1:6])
+
+colnames(race_insurance) <- (c('White', 'Black', 'AI/AN', 'Asian', 'PI', 'Other/Multi'))
+
+
+```
+
+Subsetting median income data
+```{r}
+#code chunk 3
+
+median <- read.csv("Data/median.csv")
+median <- as.data.frame(median)
+t_median <- t(median)  
+
+colnames(t_median) <- rownames(median)  
+rownames(t_median) <- colnames(median)
+
+race_subset<- as.data.frame(t_median[2:nrow(t_median),31:36])
+
+colnames(race_subset) <- (c('A_White', 'Black', 'AI/AN', 'Asian', 'NH/PI', 'Other/Multi'))
+
+```
+
+Plot of Public Insurance Usage by African-American vs. white Patients
+```{r}
+#code chunk 4
+
+asdf<- transpose(race_insurance)
+colnames(asdf)<- rownames(race_insurance)
+rownames(asdf)<- colnames(race_insurance)
+qwer<- transpose(race_subset)
+rownames(qwer)<- colnames(race_subset)
+colnames(qwer)<- rownames(race_subset)
+rownames(qwer)[1]<- "White"
+zxcv<- cbind(asdf[1:6,], qwer[1:6,])
+
+t_zxcv <- transpose (zxcv)
+rownames(t_zxcv) <- colnames(zxcv)
+colnames(t_zxcv) <- rownames(zxcv)
+
+t_zxcv
+
+insurance_type <- rownames(t_zxcv[c(1,2,5,6,7,8),])
+White_insured <- t_zxcv[c(1,2,5,6,7,8),1]
+Black_insured <- t_zxcv[c(1,2,5,6,7,8),2]
+
+dataframe <- as.data.frame(cbind(White_insured, Black_insured, insurance_type))
+
+df1 <- melt(dataframe, id.vars = "insurance_type")
+
+ggplot(df1, aes(insurance_type, value)) + 
+  geom_bar(aes(fill = variable), position = "dodge", stat="identity" ) +
+  labs(title="Public Insurance Usage by African-American vs. White Patients", y = "Incidence Within Dialysis Population", x="Insurance Type")+
+  scale_fill_brewer(palette = "Paired") +
+  theme(axis.title = (element_text(size = 12)))+
+  theme(plot.title = (element_text(size = 12)))+
+  coord_flip()
+
+```
+
+Testing hypothesis that white patients are waitlisted in significantly higher numbers than African-Americans  
+```{r}
+#code chunk 5
+
+kidwt<- read_xls("Data/esrd1.xls", sheet= 3)
+
+kidwt1<- kidwt[-(1:3),]
+
+tkidwt<- t(kidwt)
+dfkidwt<- as.data.frame(tkidwt)
+
+dfkidwt2<- dfkidwt[-1,]
+
+white<- as.numeric(paste(dfkidwt2$V35))
+black<- as.numeric(paste(dfkidwt2$V36))
+
+t.test(white, black, alternative = "greater", conf.level = .99)
+
+#conclusion: reject the null hypothesis that there is no statistically-significant difference in number of patients waitlisted
+```
+
+Plotting disparities in counts of White vs. African-American patients who receive renal Transplants 
+```{r}
+#code chunk 6
+
+dwt<- read_xls("Data/esrd1.xls", sheet= 5)
+dwt1<- dwt[-(1:3),]
+
+dwt2<- t(dwt1)
+dfdwt2<- as.data.frame(dwt2)
+
+dfdwt2<- dfdwt2[-1,]
+
+white1<- as.numeric(paste(dfdwt2$V32))
+black1<- as.numeric(paste(dfdwt2$V33))
+time<- as.numeric(paste(dfdwt2$V1))
+
+
+df<- as.data.frame(cbind(white1, black1, time))
+
+df1<- melt(df, id.vars = "time")
+ggplot(df1, aes(x= time,value, col=variable, )) + 
+  geom_point() + 
+  stat_smooth()+
+  labs(title="Numbers of Patients Who Receive Renal Transplants", x="Years: 1996 - 2016", y = "Count of Patients")+
+  theme(axis.title = (element_text(size = 12)))+
+  theme(plot.title = (element_text(size = 12)))
+
+```
+
+Plotting downward trend in overall incidents of patients referred for kidney transplants
+```{r}
+#code chunk 7
+
+dwt<- read_xls("Data/esrd1.xls", sheet= 4)
+dwt1<- dwt[-(1:3),]
+
+dwt2<- t(dwt1)
+dfdwt2<- as.data.frame(dwt2)
+
+dfdwt2<- dfdwt2[-1,]
+
+white1<- as.numeric(paste(dfdwt2$V32))
+black1<- as.numeric(paste(dfdwt2$V33))
+time<- as.numeric(paste(dfdwt2$V1))
+
+
+df<- as.data.frame(cbind(white1, black1, time))
+
+library(reshape)
+
+df1<- melt(df, id.vars = "time")
+ggplot(df1, aes(x= time,value, col=variable )) + 
+  geom_point() + 
+  geom_smooth()+
+  labs(title="Percentage of Dialysis Patients Waitlisted for Kidney Transplants", x="Years: 1996 - 2016", y = "Percentage of Patients")+
+  theme(axis.title = (element_text(size = 12)))+
+  theme(plot.title = (element_text(size = 12)))
+```
+
+For patients who receive transplants, t-test analysis of wait time disparities by race.  Plot of wait time disparity between African-American and white patients.  
+```{r}
+#code chunk 8
+
+wait<- read_xls("Data/esrd1.xls")
+wait1<- wait[-(1:3),]
+
+wait2<- t(wait1)
+dfwait<- as.data.frame(wait2)
+
+dfwait1<- dfwait[-1,]
+
+white2<- as.numeric(paste(dfwait1$V14))
+black2<- as.numeric(paste(dfwait1$V15))
+time<- as.numeric(paste(dfwait1$V1))
+
+
+t.test(white2, black2, alternative = "two.sided", conf.level = .99)
+
+dfwait2<- as.data.frame(cbind(white2, black2, time))
+
+library(reshape)
+
+dfwait3<- melt(dfwait2, id.vars = "time")
+ggplot(dfwait3, aes(x= time,value, col=variable )) + 
+  geom_point() + 
+  geom_smooth()+
+  labs(title="Median Wait Times for Kidney Transplants", x="Years: 1996 - 2008", y = "Wait Time in Days") +
+  theme(axis.title = (element_text(size = 12)))+
+  theme(plot.title = (element_text(size = 12)))
+  
+
+```
+
+Plotting disparities in amount of pre-dialysis nephrology care received by African-American versus white dialysis patients
+```{r}
+#code chunk 9
+
+esrd <- read.csv("Data/esrd5.csv")
+
+esrd<-as.data.frame(esrd)
+
+esrdnongender<- esrd[, -c(2,3)]
+
+map1<- esrdnongender%>%
+  filter(nephrology.care== "0 or <6")%>%
+  ggplot(aes(x= Year, y = value)) + 
+    geom_line(aes(y = White, colour= "White")) + 
+    geom_line(aes(y = Black.African.American, colour= "Black.African.American"))+
+    ylab("0 or <6 months")+
+    ggtitle("Total Pre-Dialysis Nephrology Care of Less Than 6 Months")+
+  theme(axis.title = (element_text(size = 12)))+
+  theme(plot.title = (element_text(size = 12)))
+
+print(map1)
+  
+
+map2<- esrdnongender%>%
+  filter(nephrology.care== ">12")%>%
+  ggplot(aes(x= Year, y = value)) + 
+    geom_line(aes(y = White, color= "White")) + 
+    geom_line(aes(y = Black.African.American, color= "Black.African.American"))+
+   ylab(">12 months")+
+    ggtitle("Total Pre-Dialysis Nephrology Care Greater Than 12 Months")+
+  theme(axis.title = (element_text(size = 12)))+
+  theme(plot.title = (element_text(size = 12)))
+
+print (map2)
+```
+
+Linear regression: median age at referral for dialyis regressed on race as a factor
+```{r}
+#code chunk 10
+
+race_subset_2 <- race_subset
+
+race_subset_2 <- race_subset_2 %>%
+  mutate(id = c(1996:2016)) %>%
+  gather(key, value, -id) 
+
+regression <- lm(race_subset_2$value ~ factor(race_subset_2$key))
+summary(regression)
+
+```
+ 
+Residual and qqnorm plots of regression analysis 
+```{r}
+#code chunk 11
+
+regression.residuals <- regression$residuals
+regression.fitted.values <- regression$fitted.values
+
+tibble (resid = regression.residuals, fitted = regression.fitted.values) %>%
+  ggplot (aes(x = fitted, y = resid)) +
+  geom_point () +
+  geom_hline (yintercept = 0, col = 'red')
+
+par(mfrow = c(1,2))
+plot(regression, c(1,2))
+
+```
+
+Subsetting Dialysis Facility Report Data on key features
+```{r}
+#code chunk 12
+
+DFC_FAC2018<- read.csv("Data/DFC_SOCRATA_FAC_DATA.csv")
+DFC_StateData<- read.csv("Data/DFC_SOCRATA_STATE_DATA.csv")
+DFC_NationalData<- read.csv("Data/DFC_SOCRATA_NATIONAL_DATA.csv")
+
+DFC_FAC_FeatureSelection<- c(2,3,5,7:12,14:21,50:51,53:57,61,63,65,68:75,85:91,93:99,101)
+# 101: %patient using catheter
+# 98,99: patients , patients.month using catheter
+# 93:97: fistula category/rate (facility)/ CI interval
+# 89:91: Transfusion rate/ CI interval
+# 85:89: SIR category/ Standard Infection Ratio/ CI interval
+# 73:75: Readmission rate/ CI interval
+# 70:72: Mortality rate/ CI interval
+# 69: Number of patients included in survival summary
+# 68: Number of patients included in readmission survey
+# 61,63,65: Hospitalization/Readmission/Survival Category
+# 53:57: %patient serum phosphorus 3.5 4.5 5.5 7 (mg/dL)
+# 50,51: patients, patients.month having serum phosphorus data
+# 19:21: In-center HD/ In-center PD/ Home HD training
+# 18: Dialysis Stations
+# 17: Late Shift
+# 15:16: Chain Owned/ Chain name
+# 14: Profit/Non-For-Profit
+# 7:12: Address 1/2, City State Zip County
+# 5: Five Star
+# 3: Facility.Name
+# 2: Provider Network
+
+DFC_NationalData_National_Rate<- 
+  c(4, 21, 28, 29, 35)
+# 35: Fistula Rate
+# 29: Hospitalization Rate
+# 28: Mortality Rate
+# 21: Readmission Rate
+# 4: Transfusion Rate
+
+
+```
+
+Subsetting facilities by for-profit and not-for-profit status
+```{r}
+#code chunk 13
+
+profit_fac<- subset(DFC_FAC2018, Profit.or.Non.Profit == "Profit", select = DFC_FAC_FeatureSelection)
+
+nonprofit_fac<- subset(DFC_FAC2018, Profit.or.Non.Profit == "Non-Profit", select = DFC_FAC_FeatureSelection)
+
+```
+
+T-tests exploring differences in for-profit vs. not-for-profit facilites on the following descriptive factors: 1) number of facilities in each category with five-star ratings and 2) number of dialysis stations per facility
+```{r}
+#code chunk 14
+
+nrow(profit_fac)
+# 6389 for profit facilities
+nrow(nonprofit_fac)
+# 892 non-for-profit facilities
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Five.Star)
+t.test(data= a,Five.Star ~ Profit.or.Non.Profit,alternative= "two.sided")
+# reject null hypothesis that there's no significant difference in numbers of for-profit vs. not-for-profit facilites with five-stars
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(X..of.Dialysis.Stations)
+t.test(data= a,X..of.Dialysis.Stations ~ Profit.or.Non.Profit, alternative= "two.sided")
+# fail to reject null hypothesis that there's no significant differnce in numbers of stations in for-profit vs. not-for-profit facilities 
+```
+
+T-tests exploring differences in for-profit vs. not-for-profit facilites on the following clinical factors: 1) mortality rates 2) readmission rates 3) transfusion rates 4) rates of fistual use 5) number of patients in long-term catheters 6) umber of patient-months in long-term catheters 7) percent of adult patients in long-term cathers and 8) standard infection ratios. 
+```{r}
+#code chunk 15
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Mortality.Rate..Facility.)
+t.test(data= a,Mortality.Rate..Facility. ~ Profit.or.Non.Profit)
+# reject null hypothesis that for-profits and not-for-profits do not have have significantly different mortality rates
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Readmission.Rate..Facility.)
+t.test(data= a,Readmission.Rate..Facility. ~ Profit.or.Non.Profit)
+# reject the null hypothesis that theres's no significant difference in readmission rates for for-profit vs. not-for-profit facilities 
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Transfusion.Rate..Facility.)
+t.test(data= a,Transfusion.Rate..Facility. ~ Profit.or.Non.Profit)
+# reject the null hypothesis that theres's no significant difference in transfusion rates between for-profit and not-for-profit facilities; transfusion rate lower in non-profit facilities with p= 0.04
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Fistula.Rate..Facility.)
+t.test(data= a,Fistula.Rate..Facility. ~ Profit.or.Non.Profit)
+# fail to reject the null hypothesis that there's no significant difference in fistula rates at for-profit vs. not-for-profit facilities
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Number.of.patients.in.long.term.catheter.summary)
+t.test(data= a,Number.of.patients.in.long.term.catheter.summary ~ Profit.or.Non.Profit)
+# reject the null hypothesis that there's no significant difference in number of patients with long-term catheters at for-profit vs. not-for-profit facilities
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Number.of.patient.months.in.long.term.catheter.summary)
+t.test(data= a,Number.of.patient.months.in.long.term.catheter.summary ~ Profit.or.Non.Profit)
+# reject the null hypothesis that there's no significant difference in number of patients months in long-term catheters at for-profit vs. not-for-profit facilities
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Percentage.of.Adult.patients.with.long.term.catheter.in.use)
+t.test(data= a,Percentage.of.Adult.patients.with.long.term.catheter.in.use~ Profit.or.Non.Profit)
+# reject the null hypothesis that there's no significant difference in percentage of adult patients w/long-term catheter use at for-profit vs. not-for-profit facilities; %patients.lt.cat is higher in non-profit facilities (t= 6.8)
+
+a<- rbind(profit_fac, nonprofit_fac) %>% drop_na(Standard.Infection.Ratio)
+t.test(data= a,Standard.Infection.Ratio ~ Profit.or.Non.Profit)
+# reject the null hypothesis that there's no significant difference in standard infection ratios between for-profit and not-for-profit facilities; SIR is higher in non-profit facilities (t= 3.5, p-val= 0.00047)
+
+```
+
+Subsetting facilities into two categories: those given more than three stars by the CMS and those given three or fewer stars stars. T-tests compare clinical indicators of high-quality dialysis treatment between "high-star" and "low-star" subsets.
+```{r}
+#code chunk 16
+
+star_a<- subset(DFC_FAC2018, select = DFC_FAC_FeatureSelection) %>%
+         drop_na(Five.Star)%>%   
+         mutate(HighStar= if_else(Five.Star<=3, 0, 1))
+# mutate, Five.Star <=3: 0, otherwise, 1.
+
+
+temp_stara<- star_a %>% drop_na(X..of.Dialysis.Stations)
+t.test(data= temp_stara,X..of.Dialysis.Stations ~ HighStar, alternative= "two.sided")
+# reject the null hypothesis that there's no significant difference in number of stations between at high-star vs. low-star facilities; low-star facilities have more stations (t= 2.79, p= 0.005)
+
+temp_stara<- star_a %>% drop_na(Mortality.Rate..Facility.)
+t.test(data= temp_stara,Mortality.Rate..Facility. ~ HighStar)
+#reject the null hypothesis that there's no significant difference in mortality rates at high-star vs. low-star facilities
+#low-star facilities have higher mortality rate (t= 19)
+
+temp_stara<- star_a %>% drop_na(Readmission.Rate..Facility.)
+t.test(data= temp_stara,Readmission.Rate..Facility. ~ HighStar)
+#reject the null hypothesis that there's no significant difference in readmission rates for high-star vs. low-star facilities; low-star facilities have higher readmission rates (t= 25)
+
+temp_stara<- star_a %>% drop_na(Transfusion.Rate..Facility.)
+t.test(data= temp_stara,Transfusion.Rate..Facility. ~ HighStar)
+#reject the null hypothesis that there's no significant difference in trasnfusion rates at high-star vs. low-star facilities
+#low star facilities have higher rate (t= 18)
+
+temp_stara<- star_a %>% drop_na(Fistula.Rate..Facility.)
+t.test(data= temp_stara,Fistula.Rate..Facility. ~ HighStar)
+# reject, low star facilities has lower fistula rate (t= -41)
+
+temp_stara<- star_a %>% drop_na(Number.of.patients.in.long.term.catheter.summary)
+t.test(data= temp_stara,Number.of.patients.in.long.term.catheter.summary ~ HighStar)
+#reject the null hypothesis that there's no significant difference in number of patients with long-term catheters at at high-star vs. low-star facilities; low star facilities have more patients in long-term catheters (p-val= 0.011)
+
+temp_stara<- star_a %>% drop_na(Number.of.patient.months.in.long.term.catheter.summary)
+t.test(data= temp_stara,Number.of.patient.months.in.long.term.catheter.summary ~ HighStar)
+# fail to reject the null hypothesis that there's a significant differencein patients months in long-term catheters between high-star vs. low-star facilities
+```
+
+Testing the star-ratings further by subsetting facilities into two categories: those given two or fewer stars by the CMS and those given more than two stars.  T-tests compare clinical indicators of high-quality dialysis treatment between "above-par" and "below-par" subsets.
+```{r}
+#code chunk 17
+
+star2_a<- subset(DFC_FAC2018, select = DFC_FAC_FeatureSelection) %>%
+         drop_na(Five.Star)%>%   
+         mutate(AboveparStar= if_else(Five.Star<=2, 0, 1))
+
+temp_star2a<- star2_a %>% drop_na(Number.of.patients.in.long.term.catheter.summary)
+t.test(data= temp_star2a,Number.of.patients.in.long.term.catheter.summary ~ AboveparStar)
+#reject the null hypothesis that there's no significant difference in number of patients in long-term catheters at above-par and below-par facilities
+
+temp_star2a<- star2_a %>% drop_na(Number.of.patient.months.in.long.term.catheter.summary)
+t.test(data= temp_star2a,Number.of.patient.months.in.long.term.catheter.summary ~ AboveparStar)
+#reject the null hypothesis that there's no significant difference in number of patient-months in long-term catheters at above-par and below-par facilities
+
+```
+
+Seeing that the Five.Star variable might be a true indicator of care quality, we attempted to find traits that predictably increase or lower a facility's star rating.  
+
+All t-test results indicate that Five.Star is able to serve as a bona fide index to care quality. Data shows that facilities with traits associated with low care-quality (such as many patients using long-term catheters, higher readmission rates, etc.) have statistically-significantly lower star ratings.
+```{r}
+#code chunk 18
+
+# here we have some columns in interest (except Five.Star, which is our target)
+# later mutate(ifelse (eachcol<= average(eachcol), 0, 1))
+testagainststar_a<- subset(DFC_FAC2018, select = DFC_FAC_FeatureSelection) %>%
+         drop_na(Five.Star)%>%
+         drop_na(X..of.Dialysis.Stations)%>%
+         drop_na(Mortality.Rate..Facility.)%>%
+         drop_na(Readmission.Rate..Facility.)%>%
+         drop_na(Transfusion.Rate..Facility.)%>%
+         drop_na(Fistula.Rate..Facility.)%>%
+         drop_na(Standard.Infection.Ratio)%>%
+         drop_na(Number.of.patients.in.long.term.catheter.summary)%>%
+         drop_na(Number.of.patient.months.in.long.term.catheter.summary)%>%
+         drop_na(Percentage.of.Adult.patients.with.long.term.catheter.in.use)%>%
+         mutate (AboveparDStations= if_else(X..of.Dialysis.Stations<= mean(DFC_FAC2018$X..of.Dialysis.Stations, na.rm= TRUE), 0,1))%>%
+         mutate (AboveparMortRate= if_else(Mortality.Rate..Facility.<= mean(DFC_FAC2018$Mortality.Rate..Facility., na.rm= TRUE), 0,1))%>%
+         mutate (AboveparReadRate= if_else(Readmission.Rate..Facility.<= mean(DFC_FAC2018$Readmission.Rate..Facility., na.rm= TRUE), 0,1))%>%
+         mutate (AboveparTransRate= if_else(Transfusion.Rate..Facility.<= mean(DFC_FAC2018$Transfusion.Rate..Facility., na.rm= TRUE), 0,1))%>%
+         mutate (AboveparFisRate= if_else(Fistula.Rate..Facility.<= mean(DFC_FAC2018$Fistula.Rate..Facility., na.rm= TRUE), 0,1))%>%
+         mutate (AboveparSIR= if_else(Standard.Infection.Ratio<= mean(DFC_FAC2018$Standard.Infection.Ratio, na.rm= TRUE), 0,1))%>%
+         mutate(AboveparCat= if_else(Number.of.patients.in.long.term.catheter.summary<= mean(DFC_FAC2018$Number.of.patients.in.long.term.catheter.summary, na.rm= TRUE), 0, 1))%>%
+         mutate(AboveparPatMthCat=if_else(Number.of.patient.months.in.long.term.catheter.summary<= mean(DFC_FAC2018$Number.of.patient.months.in.long.term.catheter.summary, na.rm= TRUE), 0, 1))%>%
+         mutate(AboveparPercCat=if_else(Percentage.of.Adult.patients.with.long.term.catheter.in.use<= mean(DFC_FAC2018$Percentage.of.Adult.patients.with.long.term.catheter.in.use, na.rm= TRUE), 0, 1))
+
+t.test(data= testagainststar_a,Five.Star~ AboveparDStations)
+# ttest shows that if AboveparDstations => statistically lower Five.Star score
+t.test(data= testagainststar_a,Five.Star~ AboveparMortRate)
+# if MortRate greater than avg, lower Five.Star, which is reasonable
+t.test(data= testagainststar_a,Five.Star~ AboveparReadRate)
+# if ReadRate greater than avg, lower Five.Star, which is reasonable
+t.test(data= testagainststar_a,Five.Star~ AboveparTransRate)
+# if Transfusion Rate greater than avg, lower Five.Star, mixed message
+t.test(data= testagainststar_a,Five.Star~ AboveparFisRate)
+# FisRate > avg=> higher score Five.Star, which is reasonable
+t.test(data= testagainststar_a,Five.Star~ AboveparSIR)
+# not significant
+t.test(data= testagainststar_a,Five.Star~ AboveparCat)
+# more long term catheter patients => lower Five.Star score, as expected
+t.test(data= testagainststar_a,Five.Star~ AboveparPatMthCat)
+# more long term catheter patients-month => lower Five.Star score, as expected
+t.test(data= testagainststar_a,Five.Star~ AboveparPercCat)
+# higher %long term catheter patients=> big drop in Five.Star, as expected. 
+
+```
+
+The following code looks for relationships between the Five.Star variable and other variables in the Dialysis Facility Report data. The graphs and tables indicate that the average accuracy of the clustering is only around 20%, the same accuracy we could achieve by randomly assigning facilities into five groups. We concluded that nothing in the data is predictive to our assumed quality index "Five.Star."
+```{r}
+#code chunk 19
+
+FAC_StarCluster<- a[c(3,14,15,30,33,37,40,45,48,49, 50)]%>%drop_na(c(1:11))
+
+### First Attempt: Partitional Clustering, kmeans
+kmeans.cluster<- FAC_StarCluster[, -1] %>%kmeans(centers= 5) # 1: Five.Star
+fviz_cluster(kmeans.cluster, data= FAC_StarCluster[, -1], geom= c("point", "text"))
+a.pca <- PCA(FAC_StarCluster[, -1],  graph = FALSE)
+var <- get_pca_var(a.pca)
+table (kmeans.cluster$cluster, FAC_StarCluster[, 1])
+# The table has shown that the kmeans cluster has lots of confusion in all five groups, hence it's not forming a good predictor to "Five.Star", which is presumably the indicator to "quality of the facility"
+
+### Second Attempt: Hierarchical Clustering, Euclidean distance+ ward.D2
+dist(FAC_StarCluster, method= "euclidean")%>%
+hclust( method= "ward.D2")%>%
+cutree(k= 5)%>%
+table( FAC_StarCluster[, 1])
+
+### Second Attempt: Hierarchical Clustering, Euclidean distance+ centroid
+dist(FAC_StarCluster, method= "euclidean")%>%
+hclust( method= "centroid")%>%
+cutree(k= 5)%>%
+table( FAC_StarCluster[, 1])
+
+### Fourth Attempt: Hierarchical Clustering, Euclidean distance+ average
+dist(FAC_StarCluster, method= "euclidean")%>%
+hclust( method= "average")%>%
+cutree(k= 5)%>%
+table( FAC_StarCluster[, 1])
+
+### Fifth Attempt: Hierarchical Clustering, Euclidean distance+ single
+dist(FAC_StarCluster, method= "euclidean")%>%
+hclust( method= "single")%>%
+cutree(k= 5)%>%
+table( FAC_StarCluster[, 1])
+
+### Sixth Attempt: Partitional Clustering, K-Medoid
+kmedoid<- pam(FAC_StarCluster, k= 5)
+table(kmedoid$clustering, FAC_StarCluster[, 1])
+
+
+```
+
+Subsetting the data for more clustering analysis. Hierarchical clustering was either 3 or 4; we used 3 for the rest of our analyses.  
+```{r}
+#code chunk 20
+
+FAC_ForCluster<- a[c(12,7,1,3,10, 14,15,30,33,37,40,45,48,49,50, 2,4 )] %>%
+                 drop_na(c(1:17))
+# adding 2: Facility.name and others at the end to make ICH part easier, to  
+# accomodate the change, the initialization of FAC_ChainCluster has - one more 
+# column.
+#12: Chain.Organization
+#7: State
+#1: Network
+#3: Five.Star
+#10: Profit
+
+### Done
+FAC_ChainCluster<- FAC_ForCluster[, -c(2:5, 16, 17)]
+fviz_nbclust(FAC_ChainCluster[, -1], # -Chain.Organization
+             FUNcluster = hcut,  # HC
+             method = "wss",     # total within sum of square
+             k.max = 12          # max number of clusters to consider
+             ) +
+labs(title="Elbow Method for HC")
+# We utilize the Elbow Method to determine number of clusters to use for
+# hierarchical clustering using this data is either 3 or 4, so we are going to 
+# use 3 clusters onwards.
+fviz_nbclust(FAC_ChainCluster[, -1], 
+             FUNcluster = kmeans,# K-Means
+             method = "wss",     # total within sum of square
+             k.max = 12          # max number of clusters to consider
+             ) +
+labs(title="Elbow Method for Kmeans") # also 3
+
+```
+
+We then then focused on clustering analysis by facility ownership--whether independently owned or chain-owned. Facilities within the same chain presented similar quality-of-care traits, leading us to suspect that corporate ownership (facilities owned by DaVita, for example) might be our strongest predictor of care-quality.  
+```{r}
+#code chunk 21
+
+### First Attempt: Partitional Clustering, kmeans
+kmeans.cluster<- FAC_ChainCluster[, -1] %>%kmeans(centers= 3) 
+fviz_cluster(kmeans.cluster, data= FAC_ChainCluster[, -1], geom= c("point", "text"))
+chain.pca <- PCA(FAC_ChainCluster[, -1],  graph = FALSE)
+var <- get_pca_var(chain.pca)
+chain.desc <- dimdesc(chain.pca, axes = c(1,2), proba = 0.05)
+chain.desc$Dim.1
+chain.desc$Dim.2
+kmeans.cluster[["centers"]]
+table (kmeans.cluster$cluster, FAC_ChainCluster[, 1])
+# The clustering groups most of the facilities in the same chain organization into same clusters, which supports the hypothesis that facilities in the same chain organization present similar trait in terms of care quality.
+
+# Dim1 26.8%:                               correlation      p.value
+#            patients.long.term.catheter          0.968         0.00
+#            patients-month.l.t.catheter          0.967         0.00
+# Dim2 14.8%:                               correlation      p.value
+#            %patients.longterm.catheter          0.770         0.00
+#            Transfusion.Rate.inFacility          0.367       3e-170
+
+### removing patient month in long term catheter (patient in long term catheter)
+### remains.
+FAC_ChainCluster2<- FAC_ChainCluster[, -9] 
+fviz_cluster(kmeans.cluster, data= FAC_ChainCluster2[, -1], geom= c("point", "text"))
+chain2.pca <- PCA(subset(FAC_ChainCluster2, select= -1),  graph = FALSE)
+var2 <- get_pca_var(chain2.pca)
+chain2.desc <- dimdesc(chain2.pca, axes = c(1,2), proba = 0.05)
+chain2.desc$Dim.1
+chain2.desc$Dim.2
+table (kmeans.cluster$cluster, FAC_ChainCluster2[, 1])
+### very similar results compared to the previous clustering (patient month not
+### be taken out)
+```
+
+The t-tests in lines 450 onward indicated that lower-star facilities tend to have more stations as well as more patients in long-term catheter use. After examining the centers of kmeans.cluster, we suspected that cluster 3 might actually represent the facilities that have been rated lower, since it represents the group of facilities with higher long-term catheter use and more dialysis stations.  
+
+To confirm, we compared the average Five.Star variable within the three clusters.  We wanted to know if group 3 received significantly lower ratings than the other clusters.    
+```{r}
+#code chunk 22
+
+cluster_result<- kmeans.cluster$cluster
+FAC_Clustered<- cbind(FAC_ForCluster, cluster_result) %>%
+                mutate(cluster3ornot= if_else(cluster_result!=3, 0, 1))
+t.test(data= FAC_Clustered, Five.Star ~ cluster3ornot)
+
+
+ttest_prac <- FAC_Clustered%>%
+  select( Five.Star, cluster_result ) %>%
+  gather(key = variable, value = value, -cluster_result) %>%
+  group_by(cluster_result, variable) %>%
+  summarise(value = list(value)) %>%
+  spread(cluster_result, value) #%>%
+ 
+
+colnames(ttest_prac)<- c("Five.Star", "cluster1", "cluster2", "cluster3")
+tres_prac <- ttest_prac %>%
+  mutate(p_value = t.test(unlist(cluster1), 
+                          unlist(cluster3), 
+                          paired=F, 
+                          var.equal = FALSE)$p.value,
+         t_value = t.test(unlist(cluster1), 
+                          unlist(cluster3), 
+                          paired=F, 
+                          var.equal = FALSE)$statistic)  %>% 
+  select( - cluster2)
+
+```
+
+Testing to see if clustering results categorize facilities in the same Network into same groups.  The clustering worked well while grouping the facilities in some networks; for other facilities the results were mediocre.  This is expected, as chain organizations, not networks, tend to have more control over maintaining unanimous care quality. 
+```{r}
+#code chunk 23
+
+table(kmeans.cluster$cluster, FAC_ForCluster[, 3])
+```
+
+Testing to see if clustering results could be predictive of a facility's profit status.  This analysis was expected to be a bit awkward since we were categorizing a cluster of three groups into a binomial variable. 
+```{r}
+#code chunk 24
+
+table(kmeans.cluster$cluster, FAC_ForCluster[, 5])
+```
+
+This begins our analysis of patient-generated care-quality data.Subsetting the patient-side data from the Dialysis Facility Reports and merging this data with the clinical data used above.
+```{r}
+#code chunk 25
+
+DFC_FACICH2018<- read.csv("Data/ICH_CAHPS_FAC_UTF8.csv", stringsAsFactors = TRUE)
+DFC_STATEICH2018<- read.csv("Data/DFC_SOCRATA_ICH_CAHPS_STATE_UTF8.csv")
+DFC_NATICH2018<- read.csv("Data/DFC_SOCRATA_ICH_CAHPS_NATIONAL_UTF8.csv")
+
+DFC_FACICHFeatureSelection<- c(3,4,7,11,13,19,20,24,25,28,29,33,34,38,39,43:46)
+# 46: ICH_CAHPS quality of patient care star rating
+# 45: Total number of completed interviews
+# 43, 44: Linearized score/ Star rating of Dialysis center
+# 38, 39: Linearized score/ Star rating of Dialysis center staff
+# 33, 34: Linearized score/ Star rating of Nephrologists
+# 28, 29: Linearized score/ Star rating of providing information to patients
+# 24, 25: Linearized score/ Star rating of care and operations
+# 19, 20: Linearized score/ Star rating of Nephrologist caring and communication
+# 13: Chain.organization
+# 11: Profit.or.Non.Profit
+# 7: State
+# 4: Address.line.1
+# 3: Facility.name
+
+DFC_FACICHSelected<- DFC_FACICH2018 %>%
+                     select (DFC_FACICHFeatureSelection)
+DFC_FACICHSelected[DFC_FACICHSelected == "Not Available"]<- NA
+DFC_FACICHSelected<- drop_na(DFC_FACICHSelected, c(1:length(DFC_FACICHFeatureSelection)))
+colnames(DFC_FACICHSelected)[1]<- "Facility.Name" # To accomodate FAC_ForCluster
+colnames(DFC_FACICHSelected)[2]<- "Address.Line.1" # To accomodate FAC_ForCluster
+colnames(DFC_FACICHSelected)[5]<- "Chain.Organization" # To accomodate FAC_ForCluster
+
+DFC_ClusteredWithICH<- merge(FAC_Clustered, DFC_FACICHSelected,by= c("Facility.Name", "State", "Profit.or.Non.Profit", "Chain.Organization", "Address.Line.1"), all= FALSE)%>%
+  drop_na(c(1:33))
+# Now converting the factors into numerics for the sake of ttesting
+DFC_ClusteredWithICH[,c(20:length(DFC_ClusteredWithICH))]<-
+  sapply(DFC_ClusteredWithICH[,c(20:length(DFC_ClusteredWithICH))], as.character)
+DFC_ClusteredWithICH[,c(20:length(DFC_ClusteredWithICH))]<-
+  sapply(DFC_ClusteredWithICH[,c(20:length(DFC_ClusteredWithICH))], as.numeric)
+
+```
+
+T-tests to explore relationship between patient-generated ratings and star ratings, which we've already shown to be accurate predictors of care-quality.  Results show that facilities with higher star ratings also tend to have higher patient-generated ratings.  Facilities in cluster 3, as expected, had statistically-significantly lower patient-generated scores.  
+```{r}
+#code chunk 26
+
+DFC_ClusteredWithICH<- mutate(DFC_ClusteredWithICH,
+                              HighStar= if_else(Five.Star<=3, 0, 1))
+t.test(data= DFC_ClusteredWithICH, ICH.CAHPS.Quality.of.patient.care.star.rating~ HighStar)
+# ttest shows that HighStar facilities tend to also score higher in ICH.
+
+# Next we are testing if facilities in cluster 3 tend to score lower in ICH
+t.test(data= DFC_ClusteredWithICH, ICH.CAHPS.Quality.of.patient.care.star.rating~ cluster3ornot)
+# facilities in cluster 3 have significantly lower patient scores.
+```
+
+We've established (in multiple ways) that star ratings can be used as bona fide indicators of the quality-of-care provided at facilities. We mapped this variable to the locations of of the 7,281 facilities in the United States. As predicted, the Southeast as a whole has the poorest quality-of-care.    
+```{r}
+#code chunk 27
+West_States<- c("AZ", "AK", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT",
+                "WA", "WY")
+NorthEast_States<- c("CT", "DE", "ME", "MA", "NJ", "NH", "NY", "PA", "RI", "VT")
+MidWest_States<- c("IL", "IA", "KS", "IN", "KY", "MI", "MO", "MN", "NE", 
+                   "ND", "OH", "SD", "WI")
+South_States<- c("AR", "AL", "FL", "DC", "GA", "LA", "MD","MS", 
+                 "NC", "OK", "TN", "SC", "TX", "VA", "WV")
+
+# recall star_a
+# star_a<- subset(DFC_FAC2018, select = DFC_FAC_FeatureSelection) %>%
+#         drop_na(Five.Star)%>%   
+#         mutate(HighStar= if_else(Five.Star<=3, 0, 1))
+
+stara_mod<- star_a[, c(3,7)]
+#colnames(stara_mod)[2]<- "state"
+#stara_mod[,1]<-sapply(stara_mod[,1], as.numeric)
+#sapply(stara_mod, class)
+agg <- aggregate(stara_mod[, -2],
+                by = list(stara_mod$State),
+                FUN = mean)
+colnames(agg)<- c("state", "AvgFiveStar")
+zxcv<- star_a[, c(1,3,7)] %>% mutate(GeoRegion= case_when(
+  NETWORK<5 ~ "NorthEast",
+  (NETWORK <13 & NETWORK>8) ~ "MidWest",
+  NETWORK>14 ~ "West",
+  TRUE ~ "South"
+))
+zxcv$GeoRegion<-as.factor(zxcv$GeoRegion)
+
+zxcv_agg <- aggregate(zxcv[, 2],
+                      by = list(zxcv$State),
+                      FUN = mean)
+zxcv_bystate <- aggregate(zxcv[, -c(1,3,4)],
+                          by = list(zxcv$State),
+                          FUN = sum)
+colnames(zxcv_agg)<- c("state", "AvgFiveStar")
+
+plot_usmap(data = agg, values = "AvgFiveStar", lines = "red") + scale_fill_continuous(low = "white", high = "red", name = "DFC Avg Star" ) + 
+theme(legend.position = "right")
+
+plot_usmap(data= agg, values= "AvgFiveStar", include = c("GA", "FL", "AL", "LA", "MS", "SC", "TN", "AR", "NC")) +
+labs(title = "Selected Southern States")+
+scale_fill_continuous(low = "white", high = "red", name = "DFC Avg Star" )+
+theme(legend.position= "right")
+
+plot_usmap(data= zxcv_agg, values= "AvgFiveStar", include = South_States) +
+labs(title = "Southern States")+
+scale_fill_continuous(low = "white", high = "red", name = "DFC Avg Star" )+
+theme(legend.position= "right")
+plot_usmap(data= zxcv_agg, values= "AvgFiveStar", include = NorthEast_States) +
+labs(title = "NorthEast States")+
+scale_fill_continuous(low = "white", high = "red", name = "DFC Avg Star" )+
+theme(legend.position= "right")
+plot_usmap(data= zxcv_agg, values= "AvgFiveStar", include = MidWest_States) +
+labs(title = "MidWest States")+
+scale_fill_continuous(low = "white", high = "red", name = "DFC Avg Star" )+
+theme(legend.position= "right")
+plot_usmap(data= zxcv_agg, values= "AvgFiveStar", include = West_States) +
+labs(title = "West States")+
+scale_fill_continuous(low = "white", high = "red", name = "DFC Avg Star" )+
+theme(legend.position= "right")
+
+```
+
+Plotting the clusters. 
+```{r}
+#code chunk 28
+
+DFC_ClusteredWithICH$cluster_result<- factor(DFC_ClusteredWithICH$cluster_result)
+# make selected columns into factor class 
+DFC_ClusteredWithICH %>%
+  ggplot(aes(x= X..of.Dialysis.Stations, y= Percentage.of.Adult.patients.with.long.term.catheter.in.use, col= cluster_result))+
+         geom_point(alpha= 0.3)+
+         #geom_smooth(method= "auto")+
+         facet_wrap(~ cluster_result)
+#plot(DFC_ClusteredWithICH$X..of.Dialysis.Stations, DFC_ClusteredWithICH$Five.Star)
+```
+
+Subsetting and recoding data from 2010 U.S. Census Report for subsequent analyses.  
+```{r}
+#code chunk 29
+
+med <- read.csv("Data/medinc.csv")
+                
+med$State <- recode(med$State, "California"="CA")
+med$State <- recode(med$State, "Connecticut"="CT")
+med$State <- recode(med$State, "Alabama"="AL")
+med$State <- recode(med$State, "Alaska"="AK")
+med$State <- recode(med$State, "Arizona"="AZ")
+med$State <- recode(med$State, "Arkansas"="AR")
+med$State <- recode(med$State, "Colorado"="CO")
+med$State <- recode(med$State, "D.C."="DC")
+med$State <- recode(med$State, "Delaware"="DE")
+med$State <- recode(med$State, "Florida"="FL")
+med$State <- recode(med$State, "Georgia"="GA")
+med$State <- recode(med$State, "Hawaii"="HI")
+med$State <- recode(med$State, "Iowa"="IA")
+med$State <- recode(med$State, "Idaho"="ID")
+med$State <- recode(med$State, "Illinois"="IL")
+med$State <- recode(med$State, "Indiana"="IN")
+med$State <- recode(med$State, "Kansas"="KS")
+med$State <- recode(med$State, "Kentucky"="KY")
+med$State <- recode(med$State, "Louisiana"="LA")
+med$State <- recode(med$State, "Maine"="ME")
+med$State <- recode(med$State, "Maryland"="MD")
+med$State <- recode(med$State, "Massachusetts"="MA")
+med$State <- recode(med$State, "Michigan"="MI")
+med$State <- recode(med$State, "Minnesota"="MN")
+med$State <- recode(med$State, "Mississippi"="MS")
+med$State <- recode(med$State, "Missouri"="MO")
+med$State <- recode(med$State, "Montana"="MT")
+med$State <- recode(med$State, "Nebraska"="NE")
+med$State <- recode(med$State, "Nevada"="NV")
+med$State <- recode(med$State, "New Hampshire"="NH")
+med$State <- recode(med$State, "New Jersey"="NJ")
+med$State <- recode(med$State, "New Mexico"="NM")
+med$State <- recode(med$State, "New York"="NY")
+med$State <- recode(med$State, "North Carolina"="NC")
+med$State <- recode(med$State, "North Dakota"="ND")
+med$State <- recode(med$State, "Ohio"="OH")
+med$State <- recode(med$State, "Oklahoma"="OK")
+med$State <- recode(med$State, "Oregon"="OR")
+med$State <- recode(med$State, "Pennsylvania"="PA")
+med$State <- recode(med$State, "Rhode Island"="RI")
+med$State <- recode(med$State, "South Carolina"="SC")
+med$State <- recode(med$State, "South Dakota"="SD")
+med$State <- recode(med$State, "Tennessee"="TN")
+med$State <- recode(med$State, "Texas"="TX")
+med$State <- recode(med$State, "Utah"="UT")
+med$State <- recode(med$State, "Vermont"="VT")
+med$State <- recode(med$State, "Virginia"="VA")
+med$State <- recode(med$State, "Washington"="WA")
+med$State <- recode(med$State, "West Virginia"="WV")
+med$State <- recode(med$State, "Wisconsin"="WI")
+med$State <- recode(med$State, "Wyoming"="WY")
+
+write.csv(med, file = "medStateUpdate1.csv")
+#creating intermediate file
+
+Latest_medinc <- med[c(1,2)]
+
+write.csv(Latest_medinc, file = "MedianInc1.csv")
+
+dialysisnew <- read.csv("Data/dialysisUSA.csv")
+
+```
+
+Subsetting additional data from the Dialysis Facility Reports.
+```{r}
+#code chunk 30
+
+dialysisnew <- read.csv("Data/dialysisUSA.csv")
+DAnalysis <- dialysisnew[c(6,11)]
+
+dialysis_df <- group_by(dialysisnew, State)
+Statestations <- summarise(dialysis_df, Stations = sum(Number))
+
+```
+
+Merging U.S. Census data with data on number of stations in each dialysis facility in the country.  
+```{r}
+#code chunk 31
+
+merged_df <- merge(x=Statestations , y= Latest_medinc, by = "State", all.x = TRUE)
+
+merged_df <- arrange(merged_df, desc(State))
+
+
+colnames(merged_df)[3] <- "Income"
+
+income<- (unfactor(merged_df$Income))
+income2<- as.numeric(gsub(",","",income))
+
+stations<- as.numeric(merged_df$Stations)
+
+```
+
+Scatterplot of relationship between median state income and number of stations inside dialysis facilites in same state. As expected, a greater number of stations is predictive of lower state income.  
+```{r}
+#code chunk 32
+
+s<- unlist(stations)
+i<- unlist(income2)
+
+plot(s,i) 
+  abline(a = NULL, b = NULL, h = NULL, v = NULL, reg = NULL,
+  coef = NULL, untf = FALSE)
+
+slog<- log(s)
+
+```
+
+Linear model of log of total number of dialysis stations per state regressed on median annual state income. Each increase of $10,000 in median annual state income is associated with an average decrease of .19 in the log number of dialysis stations inside the state  
+```{r}
+#code chunk 33
+
+slog<- log(s)
+
+reg1<- lm(slog~i)
+summary(reg1)
+
+```
+Residual and qqnorm plots of linear model.  Based on the residual plot, the assumptions of lineary and constant variance both hold. (Moving from left to right, the mean of the residuals is approximately zero in each "block" of the plot.  The spread of the residuals around the zero line is relatively constant around the zero line across the entire plot, although there is some tapering of concern at each end.)  The qqnorm plot confirms that normality assumption also holds.  (Standardized residuals are closely aligned with the 45-degree line.  Small deviations are acceptable.)
+
+Assessing the residuals tells us that the point estimates of our linear model are likely to be unbiased.    
+```{r}
+#code chunk 34
+
+plot(fitted.values(reg1), resid(reg1))
+abline(h =0)
+
+e<- resid(reg1)
+df<- as.data.frame(cbind(slog, i))
+
+df%>%
+ggplot(aes(x= i, y= slog))+
+  geom_point()+
+  geom_smooth(method= 'lm', col= 'blue') +
+  theme(axis.title = (element_text(size = 12)))+
+  theme(plot.title = (element_text(size = 12)))
+  
+
+qqnorm(y = e)
+
+```
+
+
